@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="description" content="PASVet - O plano de saúde pet da rede CG Bravo. Mais tranquilidade, economia e atendimento de verdade para o seu melhor amigo.">
+<title>PASVet – Plano de Saúde Pet | CG Bravo</title>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PWSFZGNP');</script>
+<!-- End Google Tag Manager -->
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='98' fill='%23D4A520'/%3E%3Ccircle cx='100' cy='100' r='87' fill='%231A5C30'/%3E%3Ccircle cx='100' cy='100' r='79' fill='%238ED4C0'/%3E%3Cpolygon points='100,24 168,132 32,132' fill='%231A5C30'/%3E%3Cpolygon points='100,28 164,128 36,128' fill='none' stroke='%23D4A520' stroke-width='4'/%3E%3Ctext x='100' y='88' text-anchor='middle' fill='%23D4A520' font-size='24' font-weight='bold' font-family='Georgia'%3ECG%3C/text%3E%3Ctext x='100' y='115' text-anchor='middle' fill='%23D4A520' font-size='18' font-weight='bold' font-family='Georgia'%3EBRAVO%3C/text%3E%3Ctext x='100' y='166' text-anchor='middle' fill='%231A5C30' font-size='22' font-weight='900' font-family='Arial'%3EPASVet%3C/text%3E%3C/svg%3E">
+
+<style>
+/* ==================== RESET ==================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ==================== VARIABLES ==================== */
+:root {
+  --green:       #1A5C30;
+  --green-dark:  #0D3B1E;
+  --green-mid:   #267A42;
+  --gold:        #C8960C;
+  --gold-bright: #E0AA14;
+  --gold-pale:   #FDF3CC;
+  --mint:        #8ED4C0;
+  --mint-light:  #C8EDE5;
+  --mint-bg:     #EBF9F6;
+  --cream:       #FBF8F4;
+  --wa:          #25D366;
+  --wa-hov:      #20C45A;
+  --bronze:      #B87333;
+  --silver:      #8B949E;
+  --text:        #192B1F;
+  --text-muted:  #4D6355;
+  --border:      #E4EDE7;
+  --shadow:      0 2px 16px rgba(26,92,48,.09);
+  --shadow-md:   0 4px 28px rgba(26,92,48,.13);
+  --shadow-lg:   0 8px 48px rgba(26,92,48,.18);
+}
+
+/* ==================== BASE ==================== */
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui,
+               'Helvetica Neue', Arial, sans-serif;
+  color: var(--text);
+  background: #fff;
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+img { max-width: 100%; height: auto; display: block; }
+a   { text-decoration: none; }
+ul  { list-style: none; }
+
+/* ==================== TYPOGRAPHY ==================== */
+h1 { font-size: clamp(1.8rem, 5vw, 3rem);    font-weight: 800; line-height: 1.18; text-align: center; }
+h2 { font-size: clamp(1.55rem, 3.5vw, 2.2rem); font-weight: 700; line-height: 1.22; text-align: center; }
+h3 { font-size: 1.1rem; font-weight: 700; line-height: 1.35; text-align: center; }
+p  { font-size: 1rem; line-height: 1.72; }
+
+/* ==================== LAYOUT ==================== */
+.container   { max-width: 1120px; margin: 0 auto; padding: 0 22px; }
+.section-pad { padding: 80px 0; }
+
+/* ==================== BUTTONS ==================== */
+.btn {
+  display: flex; width: fit-content;
+  align-items: center; justify-content: center; gap: 9px;
+  padding: 15px 32px; border-radius: 50px;
+  font-family: inherit; font-weight: 800; font-size: .94rem;
+  border: none; cursor: pointer;
+  transition: transform .2s, box-shadow .2s, background .2s, opacity .2s;
+  white-space: nowrap; -webkit-tap-highlight-color: transparent;
+}
+/* Center section CTAs (not nav button) */
+.hero .btn, .pain .btn, .diferencial .btn, .benefits .btn,
+.how-cta .btn, .final-cta .btn { margin-left: auto; margin-right: auto; }
+.benefits-grid > .reveal:first-child .btn { margin-left: 0; margin-right: 0; }
+.diferencial-grid > .reveal:first-child .btn { margin-left: auto; margin-right: auto; }
+.btn:hover  { transform: translateY(-2px); }
+.btn:active { transform: translateY(0); opacity: .92; }
+
+.btn-wa {
+  background: var(--wa); color: #fff;
+  box-shadow: 0 4px 20px rgba(37,211,102,.30);
+}
+.btn-wa:hover { background: var(--wa-hov); box-shadow: 0 8px 30px rgba(37,211,102,.42); }
+
+.btn-green {
+  background: var(--green); color: #fff;
+  box-shadow: 0 4px 18px rgba(26,92,48,.26);
+}
+.btn-green:hover { background: var(--green-mid); box-shadow: 0 8px 28px rgba(26,92,48,.36); }
+
+.btn-gold {
+  background: var(--gold-bright); color: var(--green-dark);
+  box-shadow: 0 4px 18px rgba(200,150,12,.32);
+}
+.btn-gold:hover { background: #ECC030; box-shadow: 0 8px 28px rgba(200,150,12,.44); }
+
+.btn-outline {
+  background: transparent; border: 2px solid var(--green); color: var(--green);
+}
+.btn-outline:hover { background: var(--green); color: #fff; }
+
+/* ==================== NAV ==================== */
+.nav {
+  position: sticky; top: 0; z-index: 200;
+  background: rgba(13,59,30,.97);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(200,150,12,.22);
+  padding: 11px 0;
+}
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  width: 100%;
+}
+.nav-brand  { display: flex; align-items: center; gap: 10px; color: #fff; font-weight: 800; font-size: 1.1rem; }
+.nav-brand span { color: var(--gold-bright); }
+.nav-logo-sm { width: 38px; height: 38px; flex-shrink: 0; }
+.nav-btn { flex-shrink: 0; }
+
+/* ==================== TAG PILLS ==================== */
+.tag {
+  display: flex; align-items: center; gap: 6px;
+  padding: 6px 16px; border-radius: 50px;
+  font-size: .76rem; font-weight: 800; letter-spacing: .6px; text-transform: uppercase;
+  width: fit-content; margin-left: auto; margin-right: auto;
+}
+.tag-mint   { background: rgba(142,212,192,.18); border: 1px solid rgba(142,212,192,.38); color: var(--mint); }
+.tag-green  { background: rgba(26,92,48,.10); color: var(--green); }
+.tag-gold   { background: var(--gold-pale); color: #7A5800; }
+.tag-red    { background: rgba(220,38,38,.07); border: 1px solid rgba(220,38,38,.18); color: #B91C1C; }
+.tag-silver { background: rgba(139,148,158,.12); color: var(--silver); }
+
+/* ==================== HERO ==================== */
+.hero {
+  background: linear-gradient(148deg, var(--green-dark) 0%, #1A5C30 55%, #1F6B37 100%);
+  position: relative; overflow: hidden;
+  padding: 76px 0 100px; text-align: center;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse at 78% 12%, rgba(142,212,192,.14) 0%, transparent 52%),
+    radial-gradient(ellipse at 12% 88%, rgba(200,150,12,.09) 0%, transparent 44%);
+}
+/* subtle dot texture */
+.hero::after {
+  content: '';
+  position: absolute; inset: 0; pointer-events: none;
+  background-image: radial-gradient(rgba(255,255,255,.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+.hero-paw { position: absolute; opacity: .06; pointer-events: none; }
+.hero-content { position: relative; z-index: 2; max-width: 760px; margin: 0 auto; }
+.hero-logo-wrap {
+  width: 128px; height: 128px; margin: 0 auto 24px;
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,.28));
+}
+.hero h1 { color: #fff; margin: 18px 0 0; text-shadow: 0 2px 14px rgba(0,0,0,.2); }
+.hero-sub {
+  color: rgba(255,255,255,.88);
+  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+  font-weight: 500;
+  max-width: 580px;
+  margin: 16px auto 32px;
+  line-height: 1.6;
+}
+.hero-wave { position: absolute; bottom: -1px; left: 0; width: 100%; }
+
+/* ==================== SECTION LABEL ==================== */
+.section-label {
+  display: inline-flex; align-items: center; gap: 7px;
+  margin-bottom: 16px;
+}
+
+/* ==================== PAIN ==================== */
+.pain { background: var(--cream); }
+.pain-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.pain-grid > .reveal:first-child { text-align: center; }
+.pain h2   { color: var(--green-dark); margin-bottom: 10px; }
+.pain .lead{ color: var(--text-muted); margin-bottom: 22px; text-align: center; }
+
+.pain-list li {
+  display: flex; align-items: center; gap: 13px;
+  background: #fff;
+  padding: 13px 18px;
+  border-radius: 12px;
+  border-left: 3px solid #DC2626;
+  box-shadow: 0 1px 6px rgba(0,0,0,.06);
+  font-weight: 600; font-size: .97rem;
+  margin-bottom: 10px;
+}
+.icon-x {
+  flex-shrink: 0;
+  width: 26px; height: 26px;
+  background: #FEE2E2;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* Pain visual */
+.pain-card {
+  background: #fff; border-radius: 22px;
+  padding: 36px 32px;
+  box-shadow: var(--shadow-lg);
+  border: 1.5px solid var(--mint-light);
+  text-align: center;
+}
+.pain-card-icon {
+  width: 72px; height: 72px;
+  background: var(--mint-bg);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 18px;
+}
+.pain-card h3 { color: var(--green); margin-bottom: 8px; font-size: 1.15rem; }
+.pain-card p  { color: var(--text-muted); font-size: .92rem; line-height: 1.6; }
+.pain-stats {
+  display: flex; gap: 0; margin-top: 26px;
+  padding-top: 22px; border-top: 1.5px solid var(--mint-light);
+  justify-content: center; text-align: center;
+}
+.stat-item { text-align: center; flex: 1; padding: 0 12px; }
+.stat-num  { font-size: 1.65rem; font-weight: 900; color: var(--green); line-height: 1; }
+.stat-lbl  { font-size: .72rem; color: var(--text-muted); font-weight: 700; margin-top: 4px; text-transform: uppercase; letter-spacing: .4px; }
+.stat-div  { width: 1.5px; background: var(--mint-light); }
+
+/* ==================== DIFFERENTIATOR ==================== */
+.diferencial { background: var(--mint-bg); }
+.diferencial-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.diferencial-grid > .reveal:first-child { text-align: center; }
+.diferencial h2 { color: var(--green-dark); margin-bottom: 14px; }
+.diferencial p  { color: var(--text-muted); margin-bottom: 28px; text-align: center; }
+
+/* Map */
+.map-box   { background: #fff; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-lg); border: 1.5px solid var(--mint-light); }
+.map-inner { background: linear-gradient(135deg, #D1EDE8 0%, #B6DDD7 100%); position: relative; height: 360px; overflow: hidden; }
+.map-pin   { position: absolute; text-align: center; transform: translateX(-50%); }
+.pin-label {
+  padding: 5px 10px; border-radius: 7px;
+  font-size: .68rem; font-weight: 700; white-space: nowrap;
+  box-shadow: 0 2px 10px rgba(0,0,0,.18); color: #fff;
+}
+.pin-stem  { width: 2px; height: 12px; margin: 0 auto; }
+.pin-dot   { width: 9px; height: 9px; border-radius: 50%; border: 2.5px solid #fff; margin: 0 auto; box-shadow: 0 1px 4px rgba(0,0,0,.22); }
+.map-city  { position: absolute; background: rgba(255,255,255,.78); backdrop-filter: blur(4px); padding: 4px 10px; border-radius: 6px; font-size: .72rem; font-weight: 700; color: var(--text); border: 1px solid rgba(26,92,48,.18); }
+.map-badge { position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); background: var(--green); color: #fff; padding: 7px 20px; border-radius: 50px; font-size: .78rem; font-weight: 700; white-space: nowrap; display: flex; align-items: center; gap: 6px; }
+
+/* ==================== NETWORK ==================== */
+.network { background: #fff; }
+.network-header { text-align: center; max-width: 640px; margin: 0 auto 44px; }
+.network-header h2 { color: var(--green-dark); margin-bottom: 12px; }
+.network-header p  { color: var(--text-muted); }
+.network-card {
+  background: linear-gradient(138deg, var(--green-dark) 0%, #1E6B38 100%);
+  border-radius: 24px; padding: 52px 48px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+  position: relative; overflow: hidden;
+}
+.network-card::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background-image: radial-gradient(rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.net-list li {
+  display: flex; align-items: center; gap: 13px;
+  font-weight: 600; font-size: 1rem; color: #fff;
+  margin-bottom: 14px; position: relative; z-index: 1;
+}
+.icon-check-gold {
+  flex-shrink: 0; width: 26px; height: 26px;
+  background: var(--gold-bright); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.net-cta { text-align: center; position: relative; z-index: 1; }
+.net-cta h3 { font-size: 1.5rem; color: #fff; margin-bottom: 10px; }
+.net-cta p  { color: rgba(255,255,255,.78); margin-bottom: 24px; font-size: .97rem; }
+
+/* ==================== BENEFITS ==================== */
+.benefits { background: var(--cream); }
+.benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.benefits-grid > .reveal:first-child { text-align: left; }
+.benefits-grid > .reveal:first-child h2 { text-align: left; }
+.benefits-grid > .reveal:first-child .tag { margin-left: 0; margin-right: 0; }
+.benefits-grid > .reveal:first-child .btn { margin-left: 0; }
+.benefits h2   { color: var(--green-dark); margin-bottom: 16px; }
+.benefits .lead{ color: var(--text-muted); margin-bottom: 24px; font-size: .97rem; text-align: left; }
+.inc-title { font-weight: 900; font-size: .76rem; letter-spacing: .7px; text-transform: uppercase; color: var(--green-dark); margin-bottom: 14px; text-align: center; }
+.inc-list li {
+  display: flex; align-items: center; gap: 12px;
+  font-weight: 600; margin-bottom: 11px; font-size: .97rem;
+}
+.icon-check {
+  flex-shrink: 0; width: 22px; height: 22px;
+  background: #D1FAE5; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.savings-card {
+  background: #fff; border-radius: 22px; padding: 36px;
+  box-shadow: var(--shadow-lg); border: 1.5px solid var(--mint-light);
+  text-align: center;
+}
+.savings-card-icon {
+  width: 72px; height: 72px;
+  background: var(--gold-pale);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 18px;
+}
+.savings-card h3 { color: var(--green); margin-bottom: 8px; font-size: 1.15rem; }
+.savings-card p  { color: var(--text-muted); font-size: .9rem; margin-bottom: 22px; }
+.savings-item    { border-radius: 12px; padding: 14px 16px; text-align: left; margin-bottom: 10px; }
+.s-lbl { font-size: .75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: .4px; margin-bottom: 4px; }
+.s-val { font-size: 1.5rem; font-weight: 900; line-height: 1; }
+
+/* ==================== PLANS ==================== */
+.plans { background: #fff; position: relative; }
+.plans::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--green) 0%, var(--gold-bright) 50%, var(--mint) 100%);
+}
+.plans-header  { text-align: center; margin-bottom: 52px; }
+.plans-header h2 { color: var(--green-dark); margin-bottom: 8px; }
+.plans-header p  { color: var(--text-muted); }
+.plans-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 20px; align-items: start;
+}
+.plan-card {
+  background: #fff; border-radius: 20px;
+  padding: 0; overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1.5px solid var(--border);
+  position: relative;
+  transition: transform .22s ease, box-shadow .22s ease;
+  text-align: center;
+}
+.plan-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+.plan-card.featured {
+  border-color: var(--gold-bright);
+  box-shadow: 0 6px 36px rgba(200,150,12,.22);
+}
+.plan-card.featured:hover { box-shadow: 0 12px 52px rgba(200,150,12,.32); }
+
+/* Tier stripe on top of each card */
+.plan-stripe { height: 4px; width: 100%; }
+.stripe-fidelidade { background: var(--green); }
+.stripe-bronze     { background: var(--bronze); }
+.stripe-prata      { background: var(--silver); }
+.stripe-ouro       { background: linear-gradient(90deg, var(--gold), var(--gold-bright)); }
+
+.plan-inner { padding: 28px 22px 28px; }
+
+.plan-badge {
+  position: absolute; top: -1px; right: 18px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-bright));
+  color: var(--green-dark);
+  font-size: .68rem; font-weight: 900; padding: 5px 14px;
+  border-radius: 0 0 10px 10px;
+  text-transform: uppercase; letter-spacing: .4px;
+  box-shadow: 0 3px 10px rgba(200,150,12,.36);
+}
+.plan-icon-wrap {
+  width: 60px; height: 60px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 14px;
+}
+.plan-name   { font-size: 1.25rem; font-weight: 800; color: var(--text); margin-bottom: 4px; }
+.plan-sub    { font-size: .78rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 16px; }
+.plan-divider{ height: 1.5px; background: var(--border); margin: 16px 0; }
+.plan-price  { display: flex; align-items: flex-start; justify-content: center; gap: 1px; margin-bottom: 4px; }
+.plan-curr   { font-size: .9rem; font-weight: 700; color: var(--text-muted); padding-top: 7px; }
+.plan-val    { font-size: 2.5rem; font-weight: 900; color: var(--green-dark); line-height: 1; }
+.plan-cents  { font-size: 1.2rem; font-weight: 900; color: var(--green-dark); padding-top: 7px; }
+.plan-per    { font-size: .8rem; color: var(--text-muted); font-weight: 600; margin-bottom: 16px; }
+
+.plan-discount {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 50px;
+  font-size: .8rem; font-weight: 900;
+  margin-bottom: 8px;
+}
+.plan-desc { font-size: .86rem; color: var(--text-muted); margin-bottom: 20px; line-height: 1.55; }
+.plan-btn  { width: 100%; font-size: .88rem; padding: 13px 18px; }
+
+/* ==================== STRUCTURE ==================== */
+.structure {
+  background: linear-gradient(142deg, var(--green-dark) 0%, #1E6B38 100%);
+  position: relative; overflow: hidden;
+}
+.structure::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse at 82% 0%, rgba(142,212,192,.13) 0%, transparent 52%),
+    radial-gradient(ellipse at 0% 100%, rgba(200,150,12,.08) 0%, transparent 42%);
+}
+.structure::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background-image: radial-gradient(rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+.structure-grid {
+  position: relative; z-index: 2;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+}
+.structure-grid > .reveal:first-child { text-align: left; }
+.structure-grid > .reveal:first-child h2 { text-align: left; }
+.structure-grid > .reveal:first-child .tag { margin-left: 0; margin-right: 0; }
+.struct-list { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 16px; }
+.struct-note { text-align: left !important; }
+.structure h2   { color: #fff; margin: 14px 0 12px; }
+.structure .lead{ color: rgba(255,255,255,.76); margin-bottom: 26px; text-align: left; }
+.struct-list li {
+  display: flex; align-items: center; gap: 13px;
+  font-weight: 600; font-size: 1rem; color: #fff; margin-bottom: 13px;
+}
+.struct-note { color: rgba(255,255,255,.65); font-style: italic; font-size: .92rem; }
+
+.struct-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+}
+.struct-stat {
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(142,212,192,.22);
+  border-radius: 16px; padding: 20px;
+  display: flex; align-items: flex-start; gap: 14px;
+  backdrop-filter: blur(6px);
+  transition: background .2s;
+}
+.struct-stat:hover { background: rgba(255,255,255,.12); }
+.struct-icon {
+  width: 46px; height: 46px; flex-shrink: 0;
+  background: rgba(142,212,192,.2);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+}
+.struct-stat h4 { font-weight: 800; font-size: .92rem; color: #fff; margin-bottom: 3px; line-height: 1.3; }
+.struct-stat p  { font-size: .78rem; color: rgba(255,255,255,.58); line-height: 1.4; }
+
+/* ==================== HOW IT WORKS ==================== */
+.how { background: var(--cream); }
+.how-header { text-align: center; max-width: 520px; margin: 0 auto 52px; }
+.how-header h2 { color: var(--green-dark); margin: 12px 0 6px; }
+.how-header p  { color: var(--text-muted); }
+.how-steps {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 28px; margin-bottom: 40px; position: relative;
+}
+.how-steps::before {
+  content: ''; position: absolute;
+  top: 38px; left: calc(12.5% + 16px); right: calc(12.5% + 16px);
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--mint) 100%);
+  z-index: 0;
+}
+.how-step { text-align: center; position: relative; z-index: 1; }
+.how-step-icon {
+  width: 40px; height: 40px;
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 8px;
+  box-shadow: var(--shadow);
+}
+.how-num {
+  width: 68px; height: 68px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-bright));
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; font-weight: 900; color: var(--green-dark);
+  margin: 0 auto 14px;
+  box-shadow: 0 4px 16px rgba(200,150,12,.30);
+}
+.how-step h3 { color: var(--green-dark); font-size: .95rem; font-weight: 700; line-height: 1.4; }
+.how-note    { text-align: center; color: var(--text-muted); font-size: .9rem; font-style: italic; margin-bottom: 32px; }
+.how-cta     { text-align: center; }
+
+/* ==================== FINAL CTA ==================== */
+.final-cta {
+  background: linear-gradient(142deg, var(--green-dark) 0%, #1E6B38 100%);
+  position: relative; overflow: hidden;
+}
+.final-cta::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(142,212,192,.14) 0%, transparent 58%);
+}
+.final-cta::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background-image: radial-gradient(rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+.final-cta-inner {
+  position: relative; z-index: 2;
+  text-align: center; max-width: 620px; margin: 0 auto;
+}
+.final-cta h2    { color: #fff; margin-bottom: 14px; font-size: clamp(1.6rem, 4vw, 2.3rem); }
+.final-cta .bold { color: rgba(255,255,255,.88); font-weight: 600; font-size: 1.05rem; margin-bottom: 32px; }
+
+/* ==================== FOOTER ==================== */
+.footer {
+  background: var(--green-dark); padding: 28px 0;
+  border-top: 1px solid rgba(200,150,12,.2);
+}
+.footer-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; flex-wrap: wrap;
+}
+.footer-copy   { color: rgba(255,255,255,.48); font-size: .82rem; }
+.footer-copy strong { color: var(--gold-bright); }
+.footer-region { color: rgba(255,255,255,.38); font-size: .82rem; }
+
+/* ==================== FLOATING WA ==================== */
+.wa-float {
+  position: fixed; bottom: 24px; right: 24px; z-index: 1000;
+  width: 58px; height: 58px;
+  background: var(--wa); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,.42);
+  transition: transform .2s, box-shadow .2s;
+  animation: wa-pulse 2.8s ease-in-out infinite;
+  -webkit-tap-highlight-color: transparent;
+}
+.wa-float:hover  { background: var(--wa-hov); transform: scale(1.08); }
+.wa-float:active { transform: scale(.95); }
+@keyframes wa-pulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,.42); }
+  50%       { box-shadow: 0 4px 32px rgba(37,211,102,.62), 0 0 0 7px rgba(37,211,102,.1); }
+}
+
+/* ==================== REVEAL ==================== */
+.reveal {
+  opacity: 0; transform: translateY(26px);
+  transition: opacity .55s ease, transform .55s ease;
+}
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1024px) {
+  .plans-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .section-pad { padding: 56px 0; }
+
+  .pain-grid,
+  .diferencial-grid,
+  .benefits-grid,
+  .structure-grid  { grid-template-columns: 1fr; gap: 36px; }
+
+  .pain-visual     { order: -1; }
+  .benefits-visual { order: -1; }
+
+  .pain-list li, .inc-list li, .net-list li, .struct-list li { text-align: left; }
+  .pain-list, .inc-list, .struct-list { text-align: left; }
+
+  /* Benefits column — centro no mobile */
+  .benefits-grid > .reveal:first-child { text-align: center; }
+  .benefits-grid > .reveal:first-child h2 { text-align: center; }
+  .benefits-grid > .reveal:first-child .tag { margin-left: auto; margin-right: auto; }
+  .benefits-grid > .reveal:first-child .btn { margin-left: auto; margin-right: auto; }
+  .benefits .lead { text-align: center; }
+
+  /* Structure column — centro no mobile */
+  .structure-grid > .reveal:first-child { text-align: center; }
+  .structure-grid > .reveal:first-child h2 { text-align: center; }
+  .structure-grid > .reveal:first-child .tag { margin-left: auto; margin-right: auto; }
+  .structure .lead { text-align: center; }
+  .struct-note { text-align: center !important; }
+
+  .network-card  { grid-template-columns: 1fr; padding: 32px 24px; gap: 28px; }
+  .struct-grid   { grid-template-columns: 1fr; }
+  .struct-list   { grid-template-columns: 1fr; }
+
+  .plans-grid    { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
+
+  .how-steps     { grid-template-columns: repeat(2, 1fr); gap: 22px; }
+  .how-steps::before { display: none; }
+  .how-step-icon { display: none; }
+
+  .map-inner  { height: 280px; }
+  .footer-inner { flex-direction: column; text-align: center; }
+
+  /* Nav mobile */
+  .nav { padding: 6px 0; }
+  .nav-logo-sm { width: 32px; height: 32px; flex-shrink: 0; }
+  .nav-brand { font-size: .9rem; gap: 7px; font-weight: 800; }
+  .nav-inner { justify-content: space-between; align-items: center; }
+  .nav-btn { display: flex !important; width: auto !important; max-width: none !important; padding: 9px 14px !important; font-size: .82rem !important; margin: 0 !important; gap: 6px; flex-shrink: 0; }
+
+  .btn { display: flex; width: 100%; max-width: 340px; margin-left: auto; margin-right: auto; }
+}
+
+@media (max-width: 480px) {
+  .how-steps { grid-template-columns: 1fr; }
+  .plans-grid { max-width: 100%; }
+}
+</style>
+</head>
+<body>
+
+<!-- GTM noscript -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PWSFZGNP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- ===== NAV ===== -->
+<nav class="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="nav-brand" aria-label="PASVet">
+        <svg class="nav-logo-sm" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="100" cy="100" r="98" fill="#C8960C"/>
+          <circle cx="100" cy="100" r="87" fill="#1A5C30"/>
+          <circle cx="100" cy="100" r="79" fill="#8ED4C0"/>
+          <polygon points="100,24 168,132 32,132" fill="#1A5C30"/>
+          <polygon points="100,28 164,128 36,128" fill="none" stroke="#C8960C" stroke-width="4"/>
+          <text x="100" y="88" text-anchor="middle" fill="#C8960C" font-size="24" font-weight="bold" font-family="Georgia,serif">CG</text>
+          <text x="100" y="115" text-anchor="middle" fill="#C8960C" font-size="18" font-weight="bold" font-family="Georgia,serif">BRAVO</text>
+          <text x="100" y="166" text-anchor="middle" fill="#1A5C30" font-size="22" font-weight="900" font-family="Arial,sans-serif">PASVet</text>
+        </svg>
+        PAS<span>Vet</span>
+      </a>
+      <a href="https://api.whatsapp.com/send?phone=555135893693&text=Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20planos"
+         target="_blank" rel="noopener noreferrer" class="btn btn-wa nav-btn">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.121 1.531 5.847L.057 23.883a.75.75 0 00.922.899l6.194-1.617A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.7-.5-5.24-1.38l-.38-.22-3.9 1.02 1.04-3.8-.24-.38A9.963 9.963 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Falar pelo WhatsApp
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <!-- Paw decorations -->
+  <svg class="hero-paw" style="top:7%;left:4%;width:72px;" viewBox="0 0 100 100" fill="white" aria-hidden="true">
+    <ellipse cx="50" cy="74" rx="22" ry="18"/><ellipse cx="27" cy="54" rx="11" ry="13"/><ellipse cx="73" cy="54" rx="11" ry="13"/><ellipse cx="37" cy="39" rx="9" ry="11"/><ellipse cx="63" cy="39" rx="9" ry="11"/>
+  </svg>
+  <svg class="hero-paw" style="bottom:20%;right:5%;width:54px;transform:rotate(28deg);" viewBox="0 0 100 100" fill="white" aria-hidden="true">
+    <ellipse cx="50" cy="74" rx="22" ry="18"/><ellipse cx="27" cy="54" rx="11" ry="13"/><ellipse cx="73" cy="54" rx="11" ry="13"/><ellipse cx="37" cy="39" rx="9" ry="11"/><ellipse cx="63" cy="39" rx="9" ry="11"/>
+  </svg>
+  <svg class="hero-paw" style="top:48%;right:14%;width:40px;transform:rotate(-18deg);opacity:.05;" viewBox="0 0 100 100" fill="#8ED4C0" aria-hidden="true">
+    <ellipse cx="50" cy="74" rx="22" ry="18"/><ellipse cx="27" cy="54" rx="11" ry="13"/><ellipse cx="73" cy="54" rx="11" ry="13"/><ellipse cx="37" cy="39" rx="9" ry="11"/><ellipse cx="63" cy="39" rx="9" ry="11"/>
+  </svg>
+
+  <div class="container">
+    <div class="hero-content">
+      <!-- Logo always above headline -->
+      <svg class="hero-logo-wrap" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo PASVet CG Bravo">
+        <circle cx="100" cy="100" r="98" fill="#C8960C"/>
+        <circle cx="100" cy="100" r="87" fill="#1A5C30"/>
+        <circle cx="100" cy="100" r="79" fill="#8ED4C0"/>
+        <polygon points="100,24 168,132 32,132" fill="#1A5C30"/>
+        <polygon points="100,28 164,128 36,128" fill="none" stroke="#C8960C" stroke-width="4"/>
+        <text x="100" y="88" text-anchor="middle" fill="#C8960C" font-size="24" font-weight="bold" font-family="Georgia,serif">CG</text>
+        <text x="100" y="115" text-anchor="middle" fill="#C8960C" font-size="18" font-weight="bold" font-family="Georgia,serif">BRAVO</text>
+        <text x="100" y="166" text-anchor="middle" fill="#1A5C30" font-size="22" font-weight="900" font-family="Arial,sans-serif">PASVet</text>
+      </svg>
+
+      <h1>O plano de saúde pet da rede CG Bravo</h1>
+      <p class="hero-sub">Mais tranquilidade, economia e atendimento de verdade para o seu melhor amigo.</p>
+
+      <a href="https://api.whatsapp.com/send?phone=555135893693&text=Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20planos"
+         target="_blank" rel="noopener noreferrer" class="btn btn-wa" style="font-size:1rem;padding:16px 36px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.121 1.531 5.847L.057 23.883a.75.75 0 00.922.899l6.194-1.617A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.7-.5-5.24-1.38l-.38-.22-3.9 1.02 1.04-3.8-.24-.38A9.963 9.963 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Quero mais informações
+      </a>
+    </div>
+  </div>
+
+  <svg class="hero-wave" viewBox="0 0 1440 56" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,36 C480,0 960,72 1440,36 L1440,56 L0,56 Z" fill="#FBF8F4"/>
+  </svg>
+</section>
+
+<!-- ===== PAIN ===== -->
+<section class="pain section-pad">
+  <div class="container">
+    <div class="pain-grid">
+      <div class="reveal">
+        <span class="tag tag-red">Reconhece essa situação?</span>
+        <h2 style="margin:14px 0 10px;">Cansado de planos que dificultam o atendimento?</h2>
+        <p class="lead">Muitos tutores contratam planos populares… mas na hora que realmente precisam:</p>
+
+        <ul class="pain-list" style="margin-bottom:28px;">
+          <li>
+            <span class="icon-x" aria-hidden="true">
+              <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2 2l10 10M12 2L2 12" stroke="#DC2626" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+            Dificuldade para conseguir atendimento
+          </li>
+          <li>
+            <span class="icon-x" aria-hidden="true">
+              <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2 2l10 10M12 2L2 12" stroke="#DC2626" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+            Clínicas sem estrutura adequada
+          </li>
+          <li>
+            <span class="icon-x" aria-hidden="true">
+              <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2 2l10 10M12 2L2 12" stroke="#DC2626" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+            Longas esperas
+          </li>
+          <li>
+            <span class="icon-x" aria-hidden="true">
+              <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2 2l10 10M12 2L2 12" stroke="#DC2626" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+            Atendimento sem atenção
+          </li>
+          <li>
+            <span class="icon-x" aria-hidden="true">
+              <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2 2l10 10M12 2L2 12" stroke="#DC2626" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+            Pouca confiança na rede credenciada
+          </li>
+        </ul>
+
+        <a href="https://api.whatsapp.com/send?phone=555135893693&text=Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20planos"
+           target="_blank" rel="noopener noreferrer" class="btn btn-wa">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.121 1.531 5.847L.057 23.883a.75.75 0 00.922.899l6.194-1.617A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.7-.5-5.24-1.38l-.38-.22-3.9 1.02 1.04-3.8-.24-.38A9.963 9.963 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          Quero mais informações
+        </a>
+      </div>
+
+      <div class="pain-visual reveal" style="transition-delay:.12s;">
+        <div class="pain-card">
+          <div class="pain-card-icon" aria-hidden="true">
+            <!-- Paw SVG icon -->
+            <svg width="36" height="36" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="50" cy="74" rx="22" ry="18" fill="#1A5C30"/>
+              <ellipse cx="27" cy="54" rx="11" ry="13" fill="#1A5C30"/>
+              <ellipse cx="73" cy="54" rx="11" ry="13" fill="#1A5C30"/>
+              <ellipse cx="37" cy="39" rx="9" ry="11" fill="#1A5C30"/>
+              <ellipse cx="63" cy="39" rx="9" ry="11" fill="#1A5C30"/>
+            </svg>
+          </div>
+          <h3>Seu pet merece melhor</h3>
+          <p>Cuidado veterinário de qualidade não precisa ser uma preocupação. A PasVet muda esse cenário.</p>
+          <div class="pain-stats">
+            <div class="stat-item">
+              <div class="stat-num">4</div>
+              <div class="stat-lbl">Planos</div>
+            </div>
+            <div class="stat-div" aria-hidden="true"></div>
+            <div class="stat-item">
+              <div class="stat-num">24h</div>
+              <div class="stat-lbl">Hospital</div>
+            </div>
+            <div class="stat-div" aria-hidden="true"></div>
+            <div class="stat-item">
+              <div class="stat-num">100%</div>
+              <div class="stat-lbl">Rede própria</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DIFERENCIAL ===== -->
+<section class="diferencial section-pad">
+  <div class="container">
+    <div class="diferencial-grid">
+      <div class="reveal">
+        <span class="tag tag-gold">Nascemos diferentes</span>
+        <h2>A PasVet nasceu para ser diferente.</h2>
+        <p>Aqui, o atendimento acontece dentro da estrutura da própria rede CG Bravo, referência veterinária na região de São Leopoldo, Novo Hamburgo e proximidades.</p>
+        <a href="#planos" class="btn btn-green">
+          Conhecer os planos
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="map-box reveal" style="transition-delay:.12s;" role="img" aria-label="Mapa da rede CG Bravo">
+        <div class="map-inner">
+          <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.25" viewBox="0 0 400 360" aria-hidden="true">
+            <line x1="80"  y1="0"   x2="80"  y2="360" stroke="#1A5C30" stroke-width=".8"/>
+            <line x1="160" y1="0"   x2="160" y2="360" stroke="#1A5C30" stroke-width=".8"/>
+            <line x1="240" y1="0"   x2="240" y2="360" stroke="#1A5C30" stroke-width=".8"/>
+            <line x1="320" y1="0"   x2="320" y2="360" stroke="#1A5C30" stroke-width=".8"/>
+            <line x1="0"   y1="72"  x2="400" y2="72"  stroke="#1A5C30" stroke-width=".8"/>
+            <line x1="0"   y1="144" x2="400" y2="144" stroke="#1A5C30" stroke-width=".8"/>
+            <line x1="0"   y1="216" x2="400" y2="216" stroke="#1A5C30" stroke-width=".8"/>
+            <line x1="0"   y1="288" x2="400" y2="288" stroke="#1A5C30" stroke-width=".8"/>
+            <path d="M 0 178 Q 118 155 200 178 Q 282 200 400 172" stroke="#1A5C30" stroke-width="5" fill="none" opacity=".6"/>
+            <path d="M 200 0 Q 192 118 200 178 Q 208 238 200 360" stroke="#1A5C30" stroke-width="3.5" fill="none" opacity=".5"/>
+            <path d="M 0 278 Q 200 260 400 288" stroke="#1A5C30" stroke-width="2.5" fill="none" opacity=".4"/>
+          </svg>
+
+          <div class="map-pin" style="top:46px;left:22%;">
+            <div class="pin-label" style="background:var(--green);">Hospital 24h CG Bravo</div>
+            <div class="pin-stem" style="background:var(--green);"></div>
+            <div class="pin-dot" style="background:var(--green);"></div>
+          </div>
+          <div class="map-pin" style="top:108px;left:45%;">
+            <div class="pin-label" style="background:var(--gold-bright);color:var(--green-dark);">CG Bravo Shopping Vet</div>
+            <div class="pin-stem" style="background:var(--gold-bright);"></div>
+            <div class="pin-dot" style="background:var(--gold-bright);"></div>
+          </div>
+          <div class="map-pin" style="top:38px;left:76%;">
+            <div class="pin-label" style="background:#B91C1C;">Clínica Vet. Dr Snoopy</div>
+            <div class="pin-stem" style="background:#B91C1C;"></div>
+            <div class="pin-dot" style="background:#B91C1C;"></div>
+          </div>
+          <div class="map-pin" style="bottom:86px;left:53%;">
+            <div class="pin-label" style="background:var(--green-dark);">Snoopy Dog CG Bravo</div>
+            <div class="pin-stem" style="background:var(--green-dark);"></div>
+            <div class="pin-dot" style="background:var(--green-dark);"></div>
+          </div>
+
+          <div class="map-city" style="top:156px;left:26px;">São Leopoldo</div>
+          <div class="map-city" style="bottom:50px;right:22px;">Novo Hamburgo</div>
+
+          <div class="map-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Rede de unidades CG Bravo
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NETWORK ===== -->
+<section class="network section-pad">
+  <div class="container">
+    <div class="network-header reveal">
+      <h2>Uma rede veterinária própria, moderna e preparada</h2>
+      <p>Ao invés de depender de clínicas terceirizadas sem padrão de qualidade, a PasVet funciona integrada aos hospitais e clínicas da rede CG Bravo.</p>
+    </div>
+
+    <div class="network-card reveal" style="transition-delay:.1s;">
+      <div>
+        <p style="color:rgba(255,255,255,.65);font-weight:700;font-size:.8rem;letter-spacing:.6px;text-transform:uppercase;margin-bottom:20px;">Isso significa:</p>
+        <ul class="net-list">
+          <li>
+            <span class="icon-check-gold" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-7" stroke="#0D3B1E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            Estrutura moderna
+          </li>
+          <li>
+            <span class="icon-check-gold" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-7" stroke="#0D3B1E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            Equipes preparadas
+          </li>
+          <li>
+            <span class="icon-check-gold" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-7" stroke="#0D3B1E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            Atendimento mais ágil
+          </li>
+          <li>
+            <span class="icon-check-gold" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-7" stroke="#0D3B1E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            Mais confiança no cuidado do seu pet
+          </li>
+          <li>
+            <span class="icon-check-gold" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-7" stroke="#0D3B1E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            Facilidade no dia a dia
+          </li>
+        </ul>
+      </div>
+      <div class="net-cta">
+        <!-- Shield icon -->
+        <svg width="52" height="52" viewBox="0 0 52 52" fill="none" style="margin:0 auto 18px;" aria-hidden="true">
+          <circle cx="26" cy="26" r="25" fill="rgba(142,212,192,.15)" stroke="rgba(142,212,192,.3)" stroke-width="1"/>
+          <path d="M26 10l13 5v9c0 8-5.5 14-13 16-7.5-2-13-8-13-16v-9l13-5z" fill="none" stroke="var(--gold-bright)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M21 26l3 3 7-7" stroke="var(--gold-bright)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3>Pronto para proteger seu pet?</h3>
+        <p>Escolha o plano ideal e comece hoje mesmo com os benefícios da rede CG Bravo.</p>
+        <a href="#planos" class="btn btn-gold">
+          Quero conhecer os planos
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BENEFITS ===== -->
+<section class="benefits section-pad">
+  <div class="container">
+    <div class="benefits-grid">
+      <div class="reveal">
+        <span class="tag tag-green">Economia real</span>
+        <h2>Mais economia e previsibilidade para cuidar do seu pet</h2>
+        <p class="lead">Emergências e tratamentos veterinários podem gerar gastos inesperados. Com a PasVet, você reduz custos e ganha mais tranquilidade financeira para cuidar do seu pet sempre que precisar.</p>
+
+        <p class="inc-title">Todos os planos incluem:</p>
+        <ul class="inc-list" style="margin-bottom:28px;">
+          <li>
+            <span class="icon-check" aria-hidden="true">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-7" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            No mínimo 1 consulta anual gratuita
+          </li>
+          <li>
+            <span class="icon-check" aria-hidden="true">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-7" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            Carteirinha do plano
+          </li>
+          <li>
+            <span class="icon-check" aria-hidden="true">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-7" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            Microchipagem na adesão
+          </li>
+          <li>
+            <span class="icon-check" aria-hidden="true">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-7" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            Cadastro completo
+          </li>
+          <li>
+            <span class="icon-check" aria-hidden="true">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-7" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            Utilização em todas as unidades da rede
+          </li>
+          <li>
+            <span class="icon-check" aria-hidden="true">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-7" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            Condições especiais em serviços, medicamentos e rações
+          </li>
+        </ul>
+
+        <a href="#planos" class="btn btn-green">
+          Quero conhecer os planos
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="benefits-visual reveal" style="transition-delay:.12s;">
+        <div class="savings-card">
+          <div class="savings-card-icon" aria-hidden="true">
+            <!-- Piggy bank / savings icon -->
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#C8960C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 9c0-3.5-3.1-6-7-6s-7 2.5-7 6c0 2.8 1.8 5.2 4.5 6.2V18h5v-2.8c2.7-1 4.5-3.4 4.5-6.2z"/>
+              <path d="M12 3V1M19 9h2v4h-2M8 18h8v2a1 1 0 01-1 1H9a1 1 0 01-1-1v-2z"/>
+              <circle cx="9" cy="9" r=".8" fill="#C8960C"/>
+            </svg>
+          </div>
+          <h3>Economia garantida</h3>
+          <p>Com planos a partir de R$ 27,90/mês, você investe pouco e economiza muito nos cuidados do seu pet.</p>
+          <div class="savings-item" style="background:var(--mint-bg);">
+            <div class="s-lbl">Plano básico a partir de</div>
+            <div class="s-val" style="color:var(--green);">R$ 27<span style="font-size:1rem;">,90/mês</span></div>
+          </div>
+          <div class="savings-item" style="background:var(--gold-pale);">
+            <div class="s-lbl">Cobertura máxima no Plano Ouro</div>
+            <div class="s-val" style="color:var(--gold);">Até 100%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PLANS ===== -->
+<section class="plans section-pad" id="planos">
+  <div class="container">
+    <div class="plans-header reveal">
+      <h2>Escolha o plano ideal para seu pet</h2>
+      <p style="color:var(--text-muted);">Todos os planos incluem acesso à rede CG Bravo e benefícios exclusivos</p>
+    </div>
+
+    <div class="plans-grid reveal" style="transition-delay:.08s;">
+
+      <!-- FIDELIDADE -->
+      <div class="plan-card">
+        <div class="plan-stripe stripe-fidelidade"></div>
+        <div class="plan-inner">
+          <div class="plan-icon-wrap" style="background:#EBF9F6;" aria-hidden="true">
+            <!-- Star icon -->
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1A5C30" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
+          <div class="plan-name">Fidelidade</div>
+          <div class="plan-sub">Plano de entrada</div>
+          <div class="plan-price">
+            <span class="plan-curr">R$</span>
+            <span class="plan-val">27</span>
+            <span class="plan-cents">,90</span>
+          </div>
+          <div class="plan-per">/mês</div>
+          <span class="plan-discount" style="background:#EBF9F6;color:var(--green);">Até 20% de redução</span>
+          <p class="plan-desc">em serviços veterinários. Ideal para quem quer começar com economia.</p>
+          <a href="https://api.whatsapp.com/send?phone=555135893693&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Plano%20Fidelidade.%20Poderia%20me%20ajudar?"
+             target="_blank" rel="noopener noreferrer" class="btn btn-wa plan-btn">Quero saber mais</a>
+        </div>
+      </div>
+
+      <!-- BRONZE -->
+      <div class="plan-card">
+        <div class="plan-stripe stripe-bronze"></div>
+        <div class="plan-inner">
+          <div class="plan-icon-wrap" style="background:#FDF3E6;" aria-hidden="true">
+            <!-- Medal/Badge icon -->
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#B87333" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="6"/>
+              <path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/>
+            </svg>
+          </div>
+          <div class="plan-name">Bronze</div>
+          <div class="plan-sub">Uso moderado</div>
+          <div class="plan-price">
+            <span class="plan-curr">R$</span>
+            <span class="plan-val">59</span>
+            <span class="plan-cents">,90</span>
+          </div>
+          <div class="plan-per">/mês</div>
+          <span class="plan-discount" style="background:#FDF3E6;color:#8B5500;">Até 50% de redução</span>
+          <p class="plan-desc">em atendimentos e procedimentos. Excelente custo-benefício.</p>
+          <a href="https://api.whatsapp.com/send?phone=555135893693&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Plano%20Bronze.%20Poderia%20me%20ajudar?"
+             target="_blank" rel="noopener noreferrer" class="btn btn-wa plan-btn">Quero saber mais</a>
+        </div>
+      </div>
+
+      <!-- PRATA — FEATURED -->
+      <div class="plan-card featured">
+        <div class="plan-badge">Mais Popular</div>
+        <div class="plan-stripe stripe-prata"></div>
+        <div class="plan-inner">
+          <div class="plan-icon-wrap" style="background:#F3F4F6;" aria-hidden="true">
+            <!-- Shield with checkmark -->
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8B949E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2l9 4v7c0 5-3.5 9.7-9 12-5.5-2.3-9-7-9-12V6l9-4z"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+          </div>
+          <div class="plan-name">Prata</div>
+          <div class="plan-sub">Acompanhamento frequente</div>
+          <div class="plan-price">
+            <span class="plan-curr">R$</span>
+            <span class="plan-val">119</span>
+            <span class="plan-cents">,90</span>
+          </div>
+          <div class="plan-per">/mês</div>
+          <span class="plan-discount" style="background:#F0F0F2;color:#555E68;">Até 70% de redução</span>
+          <p class="plan-desc">nos custos e cobertura mais ampla. Mais segurança para seu pet.</p>
+          <a href="https://api.whatsapp.com/send?phone=555135893693&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Plano%20Prata.%20Poderia%20me%20ajudar?"
+             target="_blank" rel="noopener noreferrer" class="btn btn-wa plan-btn">Quero saber mais</a>
+        </div>
+      </div>
+
+      <!-- OURO -->
+      <div class="plan-card">
+        <div class="plan-stripe stripe-ouro"></div>
+        <div class="plan-inner">
+          <div class="plan-icon-wrap" style="background:var(--gold-pale);" aria-hidden="true">
+            <!-- Crown icon -->
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8960C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 20h20M4 20l3-10 5 6 5-6 3 10"/>
+              <circle cx="12" cy="7" r="1.5" fill="#C8960C"/>
+              <circle cx="4.5" cy="10" r="1.5" fill="#C8960C"/>
+              <circle cx="19.5" cy="10" r="1.5" fill="#C8960C"/>
+            </svg>
+          </div>
+          <div class="plan-name">Ouro</div>
+          <div class="plan-sub">Cobertura máxima</div>
+          <div class="plan-price">
+            <span class="plan-curr">R$</span>
+            <span class="plan-val">249</span>
+            <span class="plan-cents">,90</span>
+          </div>
+          <div class="plan-per">/mês</div>
+          <span class="plan-discount" style="background:var(--gold-pale);color:#7A5800;">Até 100% de cobertura</span>
+          <p class="plan-desc">em atendimentos. O plano mais completo da PasVet.</p>
+          <a href="https://api.whatsapp.com/send?phone=555135893693&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Plano%20Ouro.%20Poderia%20me%20ajudar?"
+             target="_blank" rel="noopener noreferrer" class="btn btn-wa plan-btn">Quero saber mais</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== STRUCTURE ===== -->
+<section class="structure section-pad">
+  <div class="container">
+    <div class="structure-grid">
+      <div class="reveal">
+        <span class="tag tag-silver" style="background:rgba(142,212,192,.16);border:1px solid rgba(142,212,192,.28);color:var(--mint);">Infraestrutura completa</span>
+        <h2>Atendimento veterinário com estrutura de verdade</h2>
+        <p class="lead">A PasVet faz parte da rede CG Bravo, que conta com:</p>
+
+        <ul class="struct-list">
+          <li>
+            <span class="icon-check-gold" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-7" stroke="#0D3B1E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            Hospital veterinário 24h
+          </li>
+          <li>
+            <span class="icon-check-gold" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-7" stroke="#0D3B1E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            Internação
+          </li>
+          <li>
+            <span class="icon-check-gold" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-7" stroke="#0D3B1E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            Centro cirúrgico
+          </li>
+          <li>
+            <span class="icon-check-gold" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-7" stroke="#0D3B1E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            Exames laboratoriais e de imagem
+          </li>
+          <li>
+            <span class="icon-check-gold" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-7" stroke="#0D3B1E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            Atendimento emergencial
+          </li>
+          <li>
+            <span class="icon-check-gold" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-7" stroke="#0D3B1E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            Especialistas veterinários
+          </li>
+        </ul>
+        <p class="struct-note">Tudo isso com atendimento humanizado e foco no bem-estar do seu pet.</p>
+      </div>
+
+      <div class="struct-grid reveal" style="transition-delay:.12s;">
+
+        <!-- Hospital 24h -->
+        <div class="struct-stat">
+          <div class="struct-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--mint)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="5" width="18" height="16" rx="2"/>
+              <path d="M3 10h18M8 5V3M16 5V3M12 13v4M10 15h4"/>
+            </svg>
+          </div>
+          <div>
+            <h4>Hospital 24h</h4>
+            <p>Emergências a qualquer hora</p>
+          </div>
+        </div>
+
+        <!-- Internação -->
+        <div class="struct-stat">
+          <div class="struct-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--mint)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 4v16M2 9h17a2 2 0 012 2v6a2 2 0 01-2 2H2"/>
+              <path d="M2 14h19M6 9V6a2 2 0 012-2h3a2 2 0 012 2v3"/>
+            </svg>
+          </div>
+          <div>
+            <h4>Internação</h4>
+            <p>Cuidado contínuo e monitorado</p>
+          </div>
+        </div>
+
+        <!-- Centro Cirúrgico -->
+        <div class="struct-stat">
+          <div class="struct-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--mint)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 7.5l-3.5-3.5L4 16.5 3 21l4.5-1L20 7.5z"/>
+              <path d="M15 5l4 4"/>
+              <path d="M13 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2z"/>
+            </svg>
+          </div>
+          <div>
+            <h4>Centro Cirúrgico</h4>
+            <p>Estrutura moderna</p>
+          </div>
+        </div>
+
+        <!-- Exames -->
+        <div class="struct-stat">
+          <div class="struct-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--mint)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 3h6M9 3v9l-3 5a2 2 0 001.7 3h8.6A2 2 0 0018 17l-3-5V3"/>
+              <path d="M7.5 15h9"/>
+            </svg>
+          </div>
+          <div>
+            <h4>Exames</h4>
+            <p>Laboratório e imagem</p>
+          </div>
+        </div>
+
+        <!-- Emergência -->
+        <div class="struct-stat">
+          <div class="struct-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--mint)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+          </div>
+          <div>
+            <h4>Emergencial</h4>
+            <p>Resposta rápida e eficaz</p>
+          </div>
+        </div>
+
+        <!-- Especialistas -->
+        <div class="struct-stat">
+          <div class="struct-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--mint)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+              <path d="M16 11l1 4h-2l1-4z"/>
+              <path d="M14 11h4"/>
+            </svg>
+          </div>
+          <div>
+            <h4>Especialistas</h4>
+            <p>Equipe veterinária qualificada</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section class="how section-pad">
+  <div class="container">
+    <div class="how-header reveal">
+      <span class="tag tag-green">Simples assim</span>
+      <h2>Como funciona?</h2>
+      <p>É simples:</p>
+    </div>
+
+    <div class="how-steps reveal" style="transition-delay:.08s;">
+
+      <div class="how-step">
+        <div class="how-step-icon" aria-hidden="true">
+          <!-- Search/List icon -->
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+          </svg>
+        </div>
+        <div class="how-num">1</div>
+        <h3>Escolha o plano ideal</h3>
+      </div>
+
+      <div class="how-step">
+        <div class="how-step-icon" aria-hidden="true">
+          <!-- Clipboard/Sign icon -->
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/>
+            <rect x="8" y="2" width="8" height="4" rx="1"/>
+            <path d="M9 12h6M9 16h4"/>
+          </svg>
+        </div>
+        <div class="how-num">2</div>
+        <h3>Faça sua adesão</h3>
+      </div>
+
+      <div class="how-step">
+        <div class="how-step-icon" aria-hidden="true">
+          <!-- Card/Tag icon -->
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="1" y="4" width="22" height="16" rx="2"/>
+            <path d="M1 10h22"/>
+          </svg>
+        </div>
+        <div class="how-num">3</div>
+        <h3>Utilize com valores reduzidos</h3>
+      </div>
+
+      <div class="how-step">
+        <div class="how-step-icon" aria-hidden="true">
+          <!-- Heart/paw icon -->
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+          </svg>
+        </div>
+        <div class="how-num">4</div>
+        <h3>Cuide com mais tranquilidade</h3>
+      </div>
+
+    </div>
+
+    <p class="how-note">Após cadastro e assinatura, o plano já fica disponível para uso.</p>
+
+    <div class="how-cta reveal" style="transition-delay:.16s;">
+      <a href="https://api.whatsapp.com/send?phone=555135893693&text=Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20planos"
+         target="_blank" rel="noopener noreferrer" class="btn btn-wa" style="font-size:1rem;padding:16px 36px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.121 1.531 5.847L.057 23.883a.75.75 0 00.922.899l6.194-1.617A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.7-.5-5.24-1.38l-.38-.22-3.9 1.02 1.04-3.8-.24-.38A9.963 9.963 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Falar com um atendente
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="final-cta section-pad">
+  <div class="container">
+    <div class="final-cta-inner reveal">
+      <!-- Shield icon centered -->
+      <svg width="56" height="56" viewBox="0 0 56 56" fill="none" style="margin:0 auto 24px;" aria-hidden="true">
+        <circle cx="28" cy="28" r="27" fill="rgba(142,212,192,.12)" stroke="rgba(142,212,192,.28)" stroke-width="1"/>
+        <path d="M28 12l14 6v10c0 8-5.8 14.5-14 17-8.2-2.5-14-9-14-17V18l14-6z" fill="none" stroke="var(--gold-bright)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M22 28l4 4 8-8" stroke="var(--gold-bright)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <h2>Seu pet merece cuidado sem preocupação financeira</h2>
+      <p class="bold">Não espere uma emergência acontecer para buscar uma solução.</p>
+      <a href="https://api.whatsapp.com/send?phone=555135893693&text=Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20planos"
+         target="_blank" rel="noopener noreferrer" class="btn btn-wa" style="font-size:1.05rem;padding:18px 44px;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.121 1.531 5.847L.057 23.883a.75.75 0 00.922.899l6.194-1.617A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.7-.5-5.24-1.38l-.38-.22-3.9 1.02 1.04-3.8-.24-.38A9.963 9.963 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Falar com a equipe no WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <p class="footer-copy">© 2026 <strong>PASVet</strong> — Rede CG Bravo. Todos os direitos reservados.</p>
+      <p class="footer-region">São Leopoldo · Novo Hamburgo e proximidades</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== FLOATING WHATSAPP ===== -->
+<a href="https://api.whatsapp.com/send?phone=555135893693&text=Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20planos"
+   target="_blank" rel="noopener noreferrer"
+   class="wa-float" aria-label="Falar pelo WhatsApp" title="Falar pelo WhatsApp">
+  <svg width="29" height="29" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.121 1.531 5.847L.057 23.883a.75.75 0 00.922.899l6.194-1.617A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.7-.5-5.24-1.38l-.38-.22-3.9 1.02 1.04-3.8-.24-.38A9.963 9.963 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+  </svg>
+</a>
+
+<script>
+(function() {
+  // Scroll reveal
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('visible'); });
+    return;
+  }
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      var t = document.querySelector(this.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
