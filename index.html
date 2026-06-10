@@ -192,28 +192,29 @@ p{line-height:1.7;}
 
 /* ==================== PLANOS ==================== */
 .planos{background:var(--bg-light);}
-.plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch;}
+.plans-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;align-items:stretch;}
 
-.plan-card{background:#fff;border-radius:var(--radius);padding:32px 26px;box-shadow:var(--shadow);border:1.5px solid rgba(0,0,0,.06);position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column;}
+.plan-card{background:#fff;border-radius:var(--radius);padding:28px 22px 24px;box-shadow:var(--shadow);border:1.5px solid rgba(0,0,0,.07);position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column;align-items:center;text-align:center;}
 .plan-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);}
-.plan-card.feat{background:linear-gradient(155deg,var(--green-dark) 0%,var(--green-mid) 100%);border:none;box-shadow:0 28px 64px rgba(13,59,30,.32);}
+.plan-card.feat{border:2px solid var(--gold-bright);box-shadow:0 20px 56px rgba(200,150,12,.18);}
 .plan-card.feat:hover{transform:translateY(-5px);}
 
-.plan-pill{position:absolute;top:20px;right:20px;background:var(--gold-bright);color:var(--green-dark);font-size:.63rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:4px 10px;border-radius:50px;}
-.plan-pill.outline{background:transparent;border:1px solid rgba(200,150,12,.35);color:var(--gold);}
-.plan-name{font-size:1.4rem;font-weight:800;color:var(--green-dark);margin-bottom:10px;}
-.plan-card.feat .plan-name{color:#fff;}
-.plan-desc{font-size:.87rem;color:var(--muted);margin-bottom:22px;line-height:1.65;}
-.plan-card.feat .plan-desc{color:rgba(255,255,255,.68);}
-.plan-lbl{font-size:.72rem;font-weight:700;color:var(--green);letter-spacing:.5px;text-transform:uppercase;margin-bottom:14px;}
-.plan-card.feat .plan-lbl{color:rgba(255,255,255,.6);}
-.plan-list{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:28px;flex:1;}
-.plan-list li{display:flex;align-items:flex-start;gap:10px;font-size:.87rem;color:var(--text);line-height:1.55;}
-.plan-card.feat .plan-list li{color:rgba(255,255,255,.84);}
-.ck-grn{flex-shrink:0;margin-top:1px;color:#059669;}
-.ck-gld{flex-shrink:0;margin-top:1px;color:var(--gold-bright);}
+.plan-pill{position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--gold-bright);color:var(--green-dark);font-size:.62rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:5px 14px;border-radius:0 0 10px 10px;}
+.plan-icon{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+.plan-name{font-size:1.3rem;font-weight:800;color:var(--green-dark);margin-bottom:4px;}
+.plan-category{font-size:.65rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
+.plan-price{margin-bottom:12px;line-height:1.1;}
+.plan-price .curr{font-size:.85rem;font-weight:700;vertical-align:super;color:var(--text);line-height:1;}
+.plan-price .value{font-size:2.6rem;font-weight:800;color:var(--text);}
+.plan-price .cents{font-size:1rem;font-weight:700;color:var(--text);}
+.plan-price .period{font-size:.75rem;color:var(--muted);font-weight:500;display:block;margin-top:2px;}
+.plan-badge{display:inline-block;padding:4px 14px;border-radius:50px;font-size:.74rem;font-weight:600;margin-bottom:16px;}
+.badge-green{background:rgba(52,211,153,.15);color:#059669;}
+.badge-orange{background:rgba(251,143,36,.15);color:#D97706;}
+.badge-gray{background:rgba(156,163,175,.15);color:#6B7280;}
+.badge-gold{background:rgba(212,168,32,.15);color:var(--gold);}
+.plan-desc{font-size:.85rem;color:var(--muted);line-height:1.65;flex:1;margin-bottom:22px;}
 .plan-note{font-size:.75rem;text-align:center;margin-top:10px;color:var(--muted);}
-.plan-card.feat .plan-note{color:rgba(255,255,255,.45);}
 
 /* ==================== PROVA SOCIAL ==================== */
 .prova{background:#fff;}
@@ -357,6 +358,7 @@ p{line-height:1.7;}
   .plans-grid{grid-template-columns:1fr;max-width:360px;margin:0 auto;}
   .plan-card.feat{transform:none;}
   .plan-card.feat:hover{transform:translateY(-5px);}
+  .plan-pill{font-size:.58rem;}
 
   /* PROVA SOCIAL */
   .testi-card{padding:28px 20px;}
@@ -624,58 +626,76 @@ p{line-height:1.7;}
     </div>
 
     <div class="plans-grid">
-      <!-- Essencial -->
-      <div class="plan-card reveal" style="transition-delay:.08s;">
-        <div class="plan-name">Plano Essencial</div>
-        <p class="plan-desc">A base para uma vida longa. Ideal para check-ups, controle vacinal e rotina de prevenção.</p>
-        <p class="plan-lbl">O que está incluso:</p>
-        <ul class="plan-list">
-          <li><span class="ck-grn"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-7" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Consultas clínicas em horário comercial</li>
-          <li><span class="ck-grn"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-7" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Vacinas anuais completas (V10/V4 + Antirrábica)</li>
-          <li><span class="ck-grn"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-7" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Exames laboratoriais preventivos de rotina</li>
-          <li><span class="ck-grn"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-7" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Atendimento na matriz do Hospital CG Bravo</li>
-          <li><span class="ck-grn"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-7" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Acesso à carteirinha digital exclusiva de membro</li>
-        </ul>
-        <a href="https://api.whatsapp.com/send?phone=555135893693&text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Plano%20Essencial%20da%20PASVet.%20Pode%20me%20ajudar%3F"
-           target="_blank" rel="noopener noreferrer" class="btn btn-green btn-full">Falar com Conselheiro</a>
-        <p class="plan-note">Ideal para cães e gatos de todas as idades</p>
+
+      <!-- Fidelidade -->
+      <div class="plan-card reveal" style="transition-delay:.05s;">
+        <div class="plan-icon" style="background:rgba(142,212,192,.2);color:#2E6644;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="plan-name">Fidelidade</div>
+        <div class="plan-category">Plano de Entrada</div>
+        <div class="plan-price">
+          <span class="curr">R$</span><span class="value">27</span><span class="cents">,90</span>
+          <span class="period">/mês</span>
+        </div>
+        <span class="plan-badge badge-green">Até 20% de redução</span>
+        <p class="plan-desc">em serviços veterinários. Ideal para quem quer começar com economia.</p>
+        <a href="https://api.whatsapp.com/send?phone=555135893693&text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Plano%20Fidelidade%20da%20PASVet.%20Pode%20me%20ajudar%3F"
+           target="_blank" rel="noopener noreferrer" class="btn btn-green btn-full">Quero saber mais</a>
       </div>
 
-      <!-- Hospitalar — DESTAQUE -->
-      <div class="plan-card feat reveal" style="transition-delay:.18s;">
-        <span class="plan-pill">Proteção Total</span>
-        <div class="plan-name">Plano Hospitalar</div>
-        <p class="plan-desc">Tranquilidade absoluta para imprevistos urgentes, internações e procedimentos complexos.</p>
-        <p class="plan-lbl">O que está incluso:</p>
-        <ul class="plan-list">
-          <li><span class="ck-gld"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-7" stroke="#D4A820" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Pronto-atendimento de urgência e emergência 24h</li>
-          <li><span class="ck-gld"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-7" stroke="#D4A820" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Exames de imagem urgentes (Raio-X e Ultrassom)</li>
-          <li><span class="ck-gld"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-7" stroke="#D4A820" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Internações supervisionadas na UTI veterinária</li>
-          <li><span class="ck-gld"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-7" stroke="#D4A820" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Cirurgias de tecidos moles com anestesia inalatória</li>
-          <li><span class="ck-gld"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-7" stroke="#D4A820" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Medicamentos e insumos hospitalares durante internação</li>
-        </ul>
-        <a href="https://api.whatsapp.com/send?phone=555135893693&text=Ol%C3%A1%2C%20quero%20o%20Plano%20Hospitalar%20da%20PASVet!%20Pode%20me%20ajudar%3F"
-           target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-full">Quero o Plano Hospitalar</a>
-        <p class="plan-note">O mais escolhido pelos tutores CG Bravo</p>
+      <!-- Bronze -->
+      <div class="plan-card reveal" style="transition-delay:.12s;">
+        <div class="plan-icon" style="background:rgba(251,143,36,.12);color:#D97706;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+        </div>
+        <div class="plan-name">Bronze</div>
+        <div class="plan-category">Uso Moderado</div>
+        <div class="plan-price">
+          <span class="curr">R$</span><span class="value">59</span><span class="cents">,90</span>
+          <span class="period">/mês</span>
+        </div>
+        <span class="plan-badge badge-orange">Até 50% de redução</span>
+        <p class="plan-desc">em atendimentos e procedimentos. Excelente custo-benefício.</p>
+        <a href="https://api.whatsapp.com/send?phone=555135893693&text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Plano%20Bronze%20da%20PASVet.%20Pode%20me%20ajudar%3F"
+           target="_blank" rel="noopener noreferrer" class="btn btn-green btn-full">Quero saber mais</a>
       </div>
 
-      <!-- Completo -->
-      <div class="plan-card reveal" style="transition-delay:.28s;">
-        <span class="plan-pill outline">Cobertura Integral</span>
-        <div class="plan-name">Plano Completo</div>
-        <p class="plan-desc">A proteção definitiva para quem quer o máximo cuidado, incluindo especialistas e terapias.</p>
-        <p class="plan-lbl">Tudo do Hospitalar, mais:</p>
-        <ul class="plan-list">
-          <li><span class="ck-grn"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-7" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Consultas com especialistas (Cardio, Derma, Onco)</li>
-          <li><span class="ck-grn"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-7" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Sessões de Fisioterapia e Acupuntura inclusas</li>
-          <li><span class="ck-grn"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-7" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Exames laboratoriais e de imagem complexos</li>
-          <li><span class="ck-grn"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-7" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Procedimento de limpeza de tártaro (Profilaxia)</li>
-          <li><span class="ck-grn"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-7" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Coparticipação reduzida em consultas e cirurgias</li>
-        </ul>
-        <a href="https://api.whatsapp.com/send?phone=555135893693&text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Plano%20Completo%20da%20PASVet.%20Pode%20me%20ajudar%3F"
-           target="_blank" rel="noopener noreferrer" class="btn btn-green btn-full">Falar com Conselheiro</a>
-        <p class="plan-note">Proteção máxima para a longevidade do pet</p>
+      <!-- Prata — DESTAQUE -->
+      <div class="plan-card feat reveal" style="transition-delay:.19s;">
+        <span class="plan-pill">Mais Popular</span>
+        <div class="plan-icon" style="background:rgba(156,163,175,.15);color:#6B7280;margin-top:10px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="plan-name">Prata</div>
+        <div class="plan-category">Acompanhamento Frequente</div>
+        <div class="plan-price">
+          <span class="curr">R$</span><span class="value">119</span><span class="cents">,90</span>
+          <span class="period">/mês</span>
+        </div>
+        <span class="plan-badge badge-gray">Até 70% de redução</span>
+        <p class="plan-desc">nos custos e cobertura mais ampla. Mais segurança para seu pet.</p>
+        <a href="https://api.whatsapp.com/send?phone=555135893693&text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Plano%20Prata%20da%20PASVet.%20Pode%20me%20ajudar%3F"
+           target="_blank" rel="noopener noreferrer" class="btn btn-green btn-full">Quero saber mais</a>
       </div>
+
+      <!-- Ouro -->
+      <div class="plan-card reveal" style="transition-delay:.26s;">
+        <div class="plan-icon" style="background:rgba(212,168,32,.12);color:var(--gold);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l3 12h14l3-12-6 7-4-7-4 7-6-7z"/><path d="M5 20h14"/></svg>
+        </div>
+        <div class="plan-name">Ouro</div>
+        <div class="plan-category">Cobertura Máxima</div>
+        <div class="plan-price">
+          <span class="curr">R$</span><span class="value">249</span><span class="cents">,90</span>
+          <span class="period">/mês</span>
+        </div>
+        <span class="plan-badge badge-gold">Até 100% de cobertura</span>
+        <p class="plan-desc">em atendimentos. O plano mais completo da PASVet.</p>
+        <a href="https://api.whatsapp.com/send?phone=555135893693&text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Plano%20Ouro%20da%20PASVet.%20Pode%20me%20ajudar%3F"
+           target="_blank" rel="noopener noreferrer" class="btn btn-green btn-full">Quero saber mais</a>
+      </div>
+
     </div>
   </div>
 </section>
