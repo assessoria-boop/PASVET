@@ -256,12 +256,12 @@ p{line-height:1.7;}
 
 /* ==================== MASCOTES ==================== */
 .hero-mascot-img{width:100%;object-fit:contain;filter:drop-shadow(0 28px 56px rgba(0,0,0,.4));display:block;}
-.planos{position:relative;overflow:visible;}
-.final-cta{position:relative;overflow:visible;}
-.float-mascote{position:absolute;pointer-events:none;z-index:3;object-fit:contain;}
-.mascote-planos{width:210px;bottom:-10px;left:-30px;filter:drop-shadow(0 16px 36px rgba(0,0,0,.25));transform:rotate(-5deg);}
-.mascote-cta{width:230px;right:60px;bottom:0;filter:drop-shadow(0 16px 36px rgba(0,0,0,.3));transform:rotate(4deg);}
-@media(max-width:900px){.float-mascote{display:none;}}
+.mascote-divider{text-align:center;position:relative;z-index:4;margin:-60px 0;line-height:0;}
+.mascote-divider img{width:200px;object-fit:contain;filter:drop-shadow(0 14px 32px rgba(0,0,0,.28));}
+@media(max-width:768px){
+  .mascote-divider{margin:-36px 0;}
+  .mascote-divider img{width:140px;}
+}
 
 /* ==================== MAPAS ==================== */
 .maps-section{background:var(--bg-light);padding:72px 0;}
@@ -437,7 +437,10 @@ p{line-height:1.7;}
       </div>
 
       <div class="hero-img-col reveal" style="transition-delay:.14s;">
-        <img src="mascote 1.webp" alt="Mascote PASVet" class="hero-mascot-img">
+        <div class="hero-img-box">
+          <svg width="72" height="72" viewBox="0 0 100 100" fill="rgba(255,255,255,.25)" aria-hidden="true"><ellipse cx="50" cy="74" rx="22" ry="18"/><ellipse cx="27" cy="54" rx="11" ry="13"/><ellipse cx="73" cy="54" rx="11" ry="13"/><ellipse cx="37" cy="39" rx="9" ry="11"/><ellipse cx="63" cy="39" rx="9" ry="11"/></svg>
+          Foto tutor + pet
+        </div>
         <div class="hero-float">
           <div class="float-dot"></div>
           <div class="float-txt">
@@ -597,7 +600,6 @@ p{line-height:1.7;}
 
 <!-- ===== DOBRA 5 — AÇÃO / PLANOS ===== -->
 <section class="planos section-pad" id="planos">
-  <img src="mascote 2.webp" alt="" class="float-mascote mascote-planos" aria-hidden="true">
   <div class="container">
     <div class="sec-header reveal">
       <span class="tag tag-green">Nossos Planos</span>
@@ -661,6 +663,11 @@ p{line-height:1.7;}
     </div>
   </div>
 </section>
+
+<!-- MASCOTE 2 -->
+<div class="mascote-divider">
+  <img src="mascote 2.webp" alt="" aria-hidden="true">
+</div>
 
 <!-- ===== DOBRA 6 — PROVA SOCIAL ===== -->
 <section class="prova section-pad">
@@ -768,9 +775,13 @@ p{line-height:1.7;}
   </div>
 </section>
 
+<!-- MASCOTE 3 -->
+<div class="mascote-divider">
+  <img src="mascote 3.webp" alt="" aria-hidden="true">
+</div>
+
 <!-- ===== DOBRA 8 — FECHAMENTO / CTA FINAL ===== -->
 <section class="final-cta section-pad">
-  <img src="mascote 3.webp" alt="" class="float-mascote mascote-cta" aria-hidden="true">
   <div class="container">
     <div class="reveal">
       <span class="tag tag-white">Amor e Responsabilidade</span>
