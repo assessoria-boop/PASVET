@@ -254,6 +254,15 @@ p{line-height:1.7;}
 .final-cta h2 .gold{color:var(--gold-bright);}
 .final-cta .sub{color:rgba(255,255,255,.72);max-width:520px;margin:0 auto 36px;font-size:1rem;line-height:1.75;}
 
+/* ==================== MAPAS ==================== */
+.maps-section{background:var(--bg-light);padding:72px 0;}
+.maps-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:48px;}
+.map-card{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);}
+.map-label{background:var(--green-dark);color:#fff;padding:14px 20px;display:flex;align-items:center;gap:8px;font-size:.82rem;font-weight:700;}
+.map-label svg{color:var(--gold-bright);flex-shrink:0;}
+.map-label span{color:rgba(255,255,255,.7);font-weight:400;margin-left:4px;}
+.map-card iframe{display:block;width:100%;height:280px;border:0;}
+
 /* ==================== FOOTER ==================== */
 .footer{background:var(--green-dark);padding:64px 0 0;}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;}
@@ -339,6 +348,9 @@ p{line-height:1.7;}
   .faq-img{aspect-ratio:16/9;}
   .faq-col{text-align:center;}
   .faq-col h2,.faq-col>p{text-align:center;}
+
+  /* MAPAS */
+  .maps-grid{grid-template-columns:1fr;}
 
   /* FOOTER */
   .footer-grid{grid-template-columns:1fr;gap:32px;}
@@ -765,6 +777,33 @@ p{line-height:1.7;}
   </div>
 </section>
 
+<!-- ===== MAPAS ===== -->
+<section class="maps-section" aria-label="Nossas Unidades">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="tag tag-green">Nossas Unidades</span>
+      <h2>Onde você encontra <span class="gold">a CG Bravo</span></h2>
+      <p>Duas unidades completas para atender você e seu pet em São Leopoldo e Novo Hamburgo.</p>
+    </div>
+    <div class="maps-grid">
+      <div class="map-card reveal" style="transition-delay:.08s;">
+        <div class="map-label">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          São Leopoldo <span>— Av. Feitoria, 2821 - Pinheiro</span>
+        </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3463.5773521356014!2d-51.110416!3d-29.7609428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9519690fcabf92ab%3A0xc5267e74d7d707a5!2sHospital%20Veterin%C3%A1rio%2024h%20%7C%20CG%20Bravo%20%7C%20S%C3%A3o%20Leopoldo!5e0!3m2!1spt-BR!2sbr!4v1781093479995!5m2!1spt-BR!2sbr" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Hospital Veterinário CG Bravo São Leopoldo"></iframe>
+      </div>
+      <div class="map-card reveal" style="transition-delay:.18s;">
+        <div class="map-label">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Novo Hamburgo <span>— R. Bento Gonçalves, 3269 - Guarani</span>
+        </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3466.454353747033!2d-51.129542199999996!3d-29.677604199999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9519434789f2305b%3A0xeef3c966420076df!2sCG%20BRAVO%20%7C%20Cl%C3%ADnica%20Veterin%C3%A1ria%20em%20Novo%20Hamburgo!5e0!3m2!1spt-BR!2sbr!4v1781093464140!5m2!1spt-BR!2sbr" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="CG Bravo Clínica Veterinária Novo Hamburgo"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== DOBRA 9 — RODAPÉ ===== -->
 <footer class="footer" role="contentinfo">
   <div class="container">
@@ -792,10 +831,16 @@ p{line-height:1.7;}
             <span>R. Bento Gonçalves, 3269 - Guarani<br>Novo Hamburgo - RS, 93520-573</span>
           </li>
         </ul>
-        <a href="#" class="btn-maps">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Ver no Google Maps
-        </a>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:16px;">
+          <a href="https://www.google.com/maps?q=-29.7609428,-51.110416" target="_blank" rel="noopener noreferrer" class="btn-maps">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            São Leopoldo no Maps
+          </a>
+          <a href="https://www.google.com/maps?q=-29.677604199999998,-51.129542199999996" target="_blank" rel="noopener noreferrer" class="btn-maps">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Novo Hamburgo no Maps
+          </a>
+        </div>
       </div>
 
       <div class="foot-col">
