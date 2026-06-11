@@ -145,13 +145,16 @@ p{line-height:1.7;}
 .autoridade{background:var(--green-dark);background-image:radial-gradient(ellipse at 15% 60%,rgba(142,212,192,.07) 0%,transparent 55%);}
 .aut-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
 
-.video-box{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:16/10;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);cursor:pointer;display:block;text-decoration:none;}
-.video-inner{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:linear-gradient(135deg,rgba(142,212,192,.08) 0%,rgba(13,59,30,.45) 100%);}
-.play-btn{width:64px;height:64px;border-radius:50%;background:var(--gold-bright);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(212,168,32,.45);transition:transform .25s;}
-.video-box:hover .play-btn{transform:scale(1.1);}
-.video-lbl{font-size:.76rem;color:rgba(255,255,255,.55);text-align:center;letter-spacing:.3px;}
-.video-lbl strong{color:rgba(255,255,255,.85);display:block;}
-.video-cap{position:absolute;bottom:14px;left:14px;right:14px;background:rgba(13,59,30,.82);backdrop-filter:blur(4px);border-radius:8px;padding:8px 14px;font-size:.74rem;color:rgba(255,255,255,.65);text-align:center;}
+.video-box{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:9/16;max-width:340px;background:#000;cursor:pointer;}
+.video-thumb{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s;}
+.video-box:hover .video-thumb{transform:scale(1.04);}
+.video-inner{position:absolute;inset:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:linear-gradient(135deg,rgba(0,0,0,.15) 0%,rgba(0,0,0,.4) 100%);z-index:1;}
+.play-btn{width:64px;height:64px;border-radius:50%;background:var(--gold-bright);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(212,168,32,.6);transition:transform .25s;}
+.video-box:hover .play-btn{transform:scale(1.12);}
+.video-lbl{font-size:.76rem;color:rgba(255,255,255,.85);text-align:center;letter-spacing:.3px;}
+.video-lbl strong{color:#fff;display:block;}
+.video-cap{position:absolute;bottom:14px;left:14px;right:14px;background:rgba(13,59,30,.82);backdrop-filter:blur(4px);border-radius:8px;padding:8px 14px;font-size:.74rem;color:rgba(255,255,255,.65);text-align:center;z-index:1;}
+.video-box iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
 
 .aut-text h2{color:#fff;margin-bottom:14px;}
 .aut-text h2 .gold{color:var(--gold-bright);font-style:italic;}
@@ -520,15 +523,16 @@ p{line-height:1.7;}
   <div class="container">
     <div class="aut-grid">
       <div class="reveal">
-        <a href="https://youtube.com/shorts/nunhHhS9xSc" target="_blank" rel="noopener noreferrer" class="video-box" aria-label="Assistir vídeo institucional no YouTube">
-          <div class="video-inner">
+        <div class="video-box" id="videoBox" onclick="initVideo()" role="button" tabindex="0" aria-label="Reproduzir vídeo institucional">
+          <img src="https://img.youtube.com/vi/nunhHhS9xSc/hqdefault.jpg" alt="Miniatura vídeo CG Bravo" class="video-thumb" id="videoThumb">
+          <div class="video-inner" id="videoOverlay">
             <div class="play-btn">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="var(--green-dark)" aria-hidden="true"><polygon points="5,3 19,12 5,21"/></svg>
             </div>
-            <div class="video-lbl">CONHEÇA NOSSA ESTRUTURA<strong>Assista ao vídeo no YouTube</strong></div>
+            <div class="video-lbl">CONHEÇA NOSSA ESTRUTURA<strong>Assista ao vídeo (Shorts)</strong></div>
           </div>
           <div class="video-cap">Vídeo institucional — Hospital Veterinário CG Bravo</div>
-        </a>
+        </div>
       </div>
 
       <div class="aut-text reveal" style="transition-delay:.14s;">
@@ -951,6 +955,20 @@ p{line-height:1.7;}
 </footer>
 
 <script>
+// VIDEO CLICK-TO-PLAY
+function initVideo(){
+  var box=document.getElementById('videoBox');
+  var iframe=document.createElement('iframe');
+  iframe.src='https://www.youtube.com/embed/nunhHhS9xSc?autoplay=1&rel=0';
+  iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+  iframe.allowFullscreen=true;
+  iframe.title='Vídeo institucional CG Bravo';
+  document.getElementById('videoThumb').remove();
+  document.getElementById('videoOverlay').remove();
+  box.appendChild(iframe);
+  box.onclick=null;
+}
+
 // REVEAL
 (function(){
   if(!('IntersectionObserver' in window)){
